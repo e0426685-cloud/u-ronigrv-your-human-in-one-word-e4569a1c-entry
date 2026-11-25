@@ -15,7 +15,7 @@ Competition: `u-ronigrv-your-human-in-one-word-e4569a1c` — "Your Human in One 
 
 ## How main.py works
 
-`main.py` (stdlib only — `os`) validates the word with `validate()` (single word, non-blank, 1–30 characters, no spaces, raising `ValueError` otherwise), then writes it plus a trailing newline to `/output/entry.txt` using plain `open()` and sets the file mode explicitly with `os.chmod(path, 0o644)`.
+`main.py` (stdlib only — `os`, `sys`) validates the word with `validate()` (letters only, no whitespace or punctuation anywhere, non-blank, 1–30 characters, raising `ValueError` otherwise), then writes it plus a trailing newline to `/output/entry.txt` using plain `open()` and sets the file mode explicitly with `os.chmod(path, 0o644)`. Run `python3 main.py --check` to exercise `validate()` against 16 edge cases (valid words at both length limits plus blank, spaced, hyphenated, punctuated, over-long, and non-string inputs) without touching the output file.
 
 ## How to run it
 
